@@ -15,6 +15,12 @@ import java.util.ArrayList;
 public class CalculatingTest 
 {
 
+    /*
+     * Test case:
+     * Create arraylist with grade objects without weighting information.
+     * Initialize Calculating class instance with arraylist.
+     * Use getGrades to return initialized arraylist and confirm correct number of objects have been initalized.
+     */
     @Test
     public void InitializeUnweightedTest() {
         ArrayList<GradeInfo> exampleGrades = new ArrayList<>();
@@ -37,6 +43,12 @@ public class CalculatingTest
         assertEquals(exampleGrades.size(), initGrades.size());
     }
 
+    /*
+     * Test case: Create arraylist with grade objects with weighting information.
+     * Create array with all class grade weights
+     * Initialize Calculating class instance with arraylist and array.
+     * Use getGrades to return initialized arraylist and confirm correct number of objects have been initalized.
+     */
     @Test
     public void InitializeWeightedTest() {
         ArrayList<GradeInfo> exampleGrades = new ArrayList<>();
@@ -61,6 +73,14 @@ public class CalculatingTest
         assertEquals(exampleGrades.size(), initGrades.size());
     }
 
+    /*
+     * Test case:
+     * Create arraylist with grade objects without weighting information.
+     * Initialize Calculating class instance with arraylist.
+     * Call addGrade function with information for creating and adding unweighted grade object.
+     * Ensure function returns true.
+     * Use getGrades to return initialized arraylist and confirm correct number of objects have been initalized.
+     */
     @Test
     public void AddUnweightedGradeTest() {
         ArrayList<GradeInfo> exampleGrades = new ArrayList<>();
@@ -79,6 +99,15 @@ public class CalculatingTest
         assertEquals(3, calculating.getGrades().size());
     }
 
+    /*
+     * Test case:
+     * Create arraylist with grade objects with weighting information.
+     * Create array with all class grade weights
+     * Initialize Calculating class instance with arraylist and array.
+     * Call addGrade function with information for creating and adding weighted grade object.
+     * Ensure function returns true.
+     * Use getGrades to return initialized arraylist and confirm correct number of objects have been initalized.
+     */
     @Test
     public void AddWeightedGradeTest() {
         ArrayList<GradeInfo> exampleGrades = new ArrayList<>();
@@ -97,6 +126,12 @@ public class CalculatingTest
         assertEquals(3, calculating.getGrades().size());
     }
     
+    /*
+     * Test case:
+     * Create arraylist with grade objects without weighting information.
+     * Initialize Calculating class instance with arraylist.
+     * Call calculateClassGrade and check for expected result.
+     */
     @Test
     public void CalculateUnweightedClassGrade() {
         ArrayList<GradeInfo> exampleGrades = new ArrayList<>();
@@ -118,6 +153,12 @@ public class CalculatingTest
         assertEquals(0.773, unweightedClassGrade, 0.001);
     }
 
+    /*
+     * Test case: Create arraylist with grade objects with weighting information.
+     * Create array with all class grade weights
+     * Initialize Calculating class instance with arraylist and array.
+     * Call calculateClassGrade and check for expected result.
+     */
     @Test
     public void CalculateWeightedClassGrade() {
         ArrayList<GradeInfo> exampleGrades = new ArrayList<>();
