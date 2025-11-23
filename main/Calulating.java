@@ -16,16 +16,17 @@ public class Calulating {
     private double[] weightings;
 
     public Calulating(ArrayList<GradeInfo> grades) {
-        grades = new ArrayList<>();
+        this.grades = new ArrayList<>();
         for (int i = 0; i < grades.size(); i++) {
-            this.grades.add(grades.get(i));            
+            this.grades.add(grades.get(i));
+            System.err.println("Grade added: " + grades.get(i).getGrade());
         }
         size = grades.size();
         weighted = false;
     }
 
     public Calulating(ArrayList<GradeInfo> grades, double[] weightings) {
-        grades = new ArrayList<>();
+        this.grades = new ArrayList<>();
         for (int i = 0; i < grades.size(); i++) {
             this.grades.add(grades.get(i));            
         }
@@ -36,8 +37,11 @@ public class Calulating {
             this.weightings[i] = weightings[i];
         } 
     }
-
+    
     public ArrayList<GradeInfo> getGrades() {
+        for (GradeInfo g : grades) {
+            System.err.println("Grade" + g.getGrade());
+        }
         return grades;
     }
 
